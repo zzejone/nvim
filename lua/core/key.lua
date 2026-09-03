@@ -10,22 +10,27 @@ local handler = nil
 --------------------------------------------------
 
 function M.group(key, name, opts)
-	opts = opts or {}
+    key = vim.trim(key)
+    name = vim.trim(name)
 
-	local mode = opts.mode or "n"
-	local id = key .. mode
+    assert(key ~= "", "key_group: key cannot be empty")
+    assert(name ~= "", "key_group: name cannot be empty")
 
-	if groups[id] then
-		if not vim.tbl_contains(groups[id].names, name) then
-			table.insert(groups[id].names, name)
-		end
-	else
-		groups[id] = {
-			key = key,
-			names = { name },
-			mode = mode,
-		}
-	end
+    opts = opts or {}
+    local mode = opts.mode or "n"
+    local id = key .. mode
+
+    if not groups[id] then
+        groups[id] = {
+            key = key,
+            names = {},
+            mode = mode,
+        }
+    end
+
+    if not vim.tbl_contains(groups[id].names, name) then
+        table.insert(groups[id].names, name)
+    end
 end
 
 --------------------------------------------------
@@ -33,6 +38,7 @@ end
 --------------------------------------------------
 
 function M.map(mode, lhs, rhs, opts)
+    lhs = vim.trim(lhs)
 	opts = opts or {}
 
 	vim.keymap.set(mode, lhs, rhs, opts)
