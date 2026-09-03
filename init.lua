@@ -9,3 +9,5 @@ require("base.plugins")
 require("base.lsp")
 
 require("custom")
+
+require("base.post")
