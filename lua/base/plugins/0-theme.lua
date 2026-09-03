@@ -1,8 +1,4 @@
-vim.pack.add({
-	{
-		src = "https://github.com/folke/tokyonight.nvim",
-	},
-})
+pack_add("folke/tokyonight.nvim")
 
 require("tokyonight").setup({
 	style = "day", -- Dynamically set based on selected_theme
