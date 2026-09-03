@@ -1,4 +1,4 @@
-local map = vim.keymap.set
+local map = nvim.key.map
 
 local function setDesc(desc)
 	return {
@@ -8,10 +8,14 @@ local function setDesc(desc)
 	}
 end
 
+nvim.key.group("<leader>w", "保存")
+nvim.key.group("<leader>q", "退出")
 map("n", "<Leader>we", "<cmd>wq!<cr>", setDesc("保存并强制退出"))
 map("n", "<Leader>ww", "<cmd>w!<cr>", setDesc("强制保存"))
 map("n", "<Leader>wW", "<cmd>w !sudo tee %  >/dev/null<cr>", setDesc("sudo保存"))
 
+nvim.key.group("<leader>w", "窗口")
+nvim.key.group("<leader>ws", "分割")
 map("n", "<Leader>wsv", "<C-W>v", setDesc("左右分割"))
 map("n", "<Leader>wsh", "<C-W>s", setDesc("上下分割"))
 
@@ -20,6 +24,7 @@ map("n", "<C-k>", "<C-w><C-k>", setDesc("切换到上面窗口"))
 map("n", "<C-l>", "<C-w><C-l>", setDesc("切换到右边窗口"))
 map("n", "<C-h>", "<C-w><C-h>", setDesc("切换到左边窗口"))
 
+nvim.key.group("<leader>x", "工具")
 map("n", "<leader>xR", "<cmd>Reload<cr>", setDesc("重载配置"))
 
 -- ─[ 强制退出 ]───────────────────────────────────────────────────────
@@ -61,6 +66,7 @@ map("n", "<leader>qq", function()
 end, setDesc("强制退出")) -- 这里 silent=false 是为了显示消息
 
 -- ─[ 复制当前文件路径到剪切板 ]───────────────────────────────────────
+nvim.key.group("<leader>c", "复制")
 map("n", "<leader>cP", function()
 	local path = vim.fn.expand("%:p")
 	if path == "" then
