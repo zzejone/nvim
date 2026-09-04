@@ -11,8 +11,8 @@ _G.pack_add = pack.add
 require("core")
 
 require("base.plugins")
-require("base.lsp")
 
 require("custom")
 
+require("base.lsp")
 require("base.post")

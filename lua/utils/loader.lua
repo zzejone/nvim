@@ -17,10 +17,17 @@ function M.load_modules(path)
 
 	table.sort(files)
 
+	local modules = {}
+
 	for _, file in ipairs(files) do
 		local module = file:gsub("%.lua$", "")
+
 		require(path .. "." .. module)
+
+		table.insert(modules, module)
 	end
+
+	return modules
 end
 
 return M
