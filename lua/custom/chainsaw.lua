@@ -12,6 +12,7 @@ require("chainsaw").setup({
 	},
 })
 
+nvim.key.group("<leader>ll", "变量打印")
 nvim.key.map("n", "<leader>llv", "<cmd>Chainsaw variableLog<cr>", { desc = "log variable" })
 nvim.key.map("n", "<leader>llo", "<cmd>Chainsaw objectLog<cr>", { desc = "log objectLog" })
 nvim.key.map("n", "<leader>llt", "<cmd>Chainsaw typeLog<cr>", { desc = "log type" })
