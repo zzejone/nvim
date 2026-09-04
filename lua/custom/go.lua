@@ -110,7 +110,7 @@ require("go").setup({
 		-- disable = {},     -- linters to disable empty by default, e.g. {'errcheck', 'staticcheck'}
 		-- enable = {},      -- linters to enable; empty by default, set to e.g. {'govet', 'ineffassign','revive', 'gosimple'}
 		-- enable_only = {}, -- linters to enable only; empty by default, set to e.g. {'govet', 'ineffassign','revive', 'gosimple'}
-		severity = vim.diagnostic.severity.INFO, -- severity level of the diagnostics
+		severity = vim.diagnostic.severity.WARN, -- severity level of the diagnostics
 	},
 	null_ls = { -- check null-ls integration in readme
 		golangci_lint = {
