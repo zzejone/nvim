@@ -27,6 +27,8 @@ map("n", "<C-h>", "<C-w><C-h>", setDesc("切换到左边窗口"))
 nvim.key.group("<leader>x", "工具")
 map("n", "<leader>xR", "<cmd>Reload<cr>", setDesc("重载配置"))
 
+map("n", "<leader>bd", "<cmd>bd<cr>", setDesc("关闭当前buffer"))
+
 -- ─[ 强制退出 ]───────────────────────────────────────────────────────
 local quit_tracker = {
 	last_time = 0,
