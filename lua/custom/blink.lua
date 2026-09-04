@@ -8,7 +8,9 @@ pack_add({
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
-require("blink.cmp").setup({
+local blink = require("blink.cmp")
+
+blink.setup({
 	snippets = {
 		preset = "luasnip",
 	},
@@ -54,4 +56,8 @@ require("blink.cmp").setup({
 	keymap = {
 		["<CR>"] = { "accept", "fallback" },
 	},
+})
+
+vim.lsp.config("*", {
+	capabilities = blink.get_lsp_capabilities(),
 })
