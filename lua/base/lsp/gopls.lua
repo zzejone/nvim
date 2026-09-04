@@ -3,6 +3,18 @@ vim.lsp.config("gopls", {
 		usePlaceholders = true,
 		completeUnimported = true,
 	},
+	filetypes = {
+		"go",
+		"gomod",
+		"gowork",
+		"gotmpl",
+	},
+
+	root_markers = {
+		"go.work",
+		"go.mod",
+		".git",
+	},
 	settings = {
 		gopls = {
 			-- 分析器配置
@@ -74,4 +86,3 @@ vim.lsp.config("gopls", {
 	},
 })
 
-vim.lsp.enable("gopls")
