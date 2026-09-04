@@ -3,3 +3,5 @@ pack_add({
 	"MeanderingProgrammer/render-markdown.nvim",
 })
 require("help").setup()
+
+nvim.key.map("n", "<leader>hh", "<cmd>Help<cr>", { desc = "帮助" })
