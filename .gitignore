@@ -1,0 +1,27 @@
+# Neovim
+*.swp
+*.swo
+*.swn
+*.un~
+
+# macOS
+.DS_Store
+
+# Lua
+luac.out
+
+# Testing
+coverage/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+Thumbs.db
+
+# Temporary
+tmp/
+temp/
+
+nvim-pack-lock.json
