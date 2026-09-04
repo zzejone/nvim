@@ -5,6 +5,13 @@ pack_add({
 	"nvim-telescope/telescope.nvim",
 })
 
+local function cwd()
+	return vim.fn.getcwd()
+end
+local function project_root()
+	return vim.fs.root(0, { ".git", "go.mod", "package.json", "pnpm-workspace.yaml" }) or vim.fn.getcwd()
+end
+
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 
