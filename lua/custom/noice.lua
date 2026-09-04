@@ -1,3 +1,4 @@
+-- UI 美化
 pack_add({
 	"MunifTanjim/nui.nvim",
 	"rcarriga/nvim-notify",

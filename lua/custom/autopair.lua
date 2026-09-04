@@ -1,3 +1,4 @@
+-- 自动括号、引号
 pack_add({
 	"windwp/nvim-autopairs",
 })

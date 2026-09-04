@@ -1,3 +1,4 @@
+-- 代码大纲
 pack_add({
 	"nvim-treesitter/nvim-treesitter",
 	"nvim-tree/nvim-web-devicons",
