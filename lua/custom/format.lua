@@ -69,6 +69,8 @@ require("conform").setup({
 nvim.key.map("n", "<leader>lf", function()
 	require("conform").format()
 end, { desc = "格式化当前文档" })
+
+nvim.key.group("<leader>T", "切换")
 nvim.key.map("n", "<leader>Tf", function()
 	if vim.b.disable_autoformat or vim.g.disable_autoformat then
 		-- FormatDisable! will disable formatting just for this buffer
