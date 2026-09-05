@@ -52,22 +52,9 @@ require("lualine").setup({
 			{
 				"diagnostics",
 				sources = {
-					"nvim_lsp",
-					"nvim_diagnostic",
 					"nvim_workspace_diagnostic",
-					"coc",
-					"ale",
-					"vim_lsp",
 				},
 				sections = { "error", "warn", "info", "hint" },
-				diagnostics_color = {
-					-- Same values as the general color option can be used here.
-					error = "DiagnosticError", -- Changes diagnostics' error color.
-					warn = "DiagnosticWarn", -- Changes diagnostics' warn color.
-					info = "DiagnosticInfo", -- Changes diagnostics' info color.
-					hint = "DiagnosticHint", -- Changes diagnostics' hint color.
-				},
-				colored = true, -- Displays diagnostics status in color if set to true.
 				update_in_insert = true, -- Update diagnostics in insert mode.
 				always_visible = false,
 			},
@@ -78,7 +65,8 @@ require("lualine").setup({
 	options = {
 		theme = "everforest",
 		component_separators = { left = "/", right = "\\" },
-		section_separators = { left = "", right = "" },
+		--                
+		section_separators = { left = "", right = "" },
 		always_divide_middle = true,
 	},
 	inactive_sections = {
