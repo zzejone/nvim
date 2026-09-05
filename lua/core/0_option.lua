@@ -61,6 +61,15 @@ vim.diagnostic.config({
 
 	-- 插入模式实时更新诊断
 	update_in_insert = true,
+
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "󰅚",
+			[vim.diagnostic.severity.WARN] = "󰀪",
+			[vim.diagnostic.severity.INFO] = "󰋽",
+			[vim.diagnostic.severity.HINT] = "󰌶",
+		},
+	},
 })
 
 -- CursorHold 触发时间
