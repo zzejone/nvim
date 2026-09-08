@@ -189,8 +189,6 @@ require("go").setup({
 
 nvim.key.group("<leader>lg", "go")
 
-nvim.key.map("n", "<leader>lgta", "<cmd>GoAddTags<cr>", { desc = "添加tag" })
-
 nvim.key.map("n", "<leader>lga", "<cmd>FieldAlignmentFix<cr>", { desc = "内存对齐修复" })
 nvim.key.map("n", "<leader>lgc", "<cmd>GoCmt<cr>", { desc = "添加文档" })
 nvim.key.map("n", "<leader>lgd", "<cmd>GoDoc<cr>", { desc = "显示文档" })

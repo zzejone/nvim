@@ -15,7 +15,7 @@ blink.setup({
 		preset = "luasnip",
 	},
 	sources = {
-		default = { "lsp", "buffer", "snippets", "path" },
+		default = { "lsp", "buffer", "snippets", "path", "omni" },
 	},
 	appearance = {
 		-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
