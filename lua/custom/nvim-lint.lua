@@ -3,14 +3,16 @@ pack_add({
 })
 local lint = require("lint")
 
--- 配置不同文件类型的代码检查工具
+-- eslint 未安装时的处理：跳过对应语言的 lint，避免 ENOENT 报错
+local eslint_found = vim.fn.executable("eslint") == 1
+
 lint.linters_by_ft = {
 	bash = { "bash" },
 	html = { "htmlhint" },
-	javascript = { "eslint" },
+	javascript = eslint_found and { "eslint" } or {},
 	python = { "pylint" },
-	typescript = { "eslint" },
-	vue = { "eslint" },
+	typescript = eslint_found and { "eslint" } or {},
+	vue = eslint_found and { "eslint" } or {},
 	proto = { "protolint" },
 	go = { "golangcilint" },
 }
