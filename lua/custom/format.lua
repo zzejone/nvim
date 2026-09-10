@@ -9,7 +9,7 @@ require("conform").setup({
 		lsp_format = "fallback",
 	},
 	formatters_by_ft = {
-		go = { "goimports-reviser", "gofumpt", "golines" },
+		go = { "goimports-reviser", "gofumpt" },
 		log = { "jq_log_formatter" },
 		lua = { "stylua" },
 		html = { "prettier" },
@@ -59,9 +59,6 @@ require("conform").setup({
 				"-set-alias", -- 为带版本的包自动设置别名
 				"-company-prefixes", -- 公司前缀（可选，比如你们公司的内网域名）
 			},
-		},
-		golines = {
-			prepend_args = { "--max-len=80" },
 		},
 	},
 })
