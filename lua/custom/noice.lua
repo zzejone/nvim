@@ -53,3 +53,11 @@ require("noice").setup({
 		},
 	},
 })
+
+require("notify").setup({
+	top_down = false,
+	level = vim.log.levels.ERROR,
+})
+
+nvim.key.group("<leader>n", "notify")
+nvim.key.map("n", "<leader>nh", "<cmd>Telescope notify<cr>", { desc = "通知历史" })
