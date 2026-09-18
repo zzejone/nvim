@@ -47,7 +47,8 @@ vim.opt.undoreload = 1000
 -- 使用系统剪贴板
 -- 延迟设置避免影响启动速度
 vim.schedule(function()
-	vim.opt.clipboard = "unnamedplus"
+	vim.opt.clipboard = ""
+	-- vim.opt.clipboard = "unnamedplus"
 end)
 
 -- =====================================================
