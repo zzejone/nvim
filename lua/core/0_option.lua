@@ -71,6 +71,13 @@ vim.diagnostic.config({
 			[vim.diagnostic.severity.HINT] = "󰌶",
 		},
 	},
+
+	float = {
+		border = "rounded",
+		source = "always",
+		max_width = 120,
+		wrap = true,
+	},
 })
 
 -- CursorHold 触发时间

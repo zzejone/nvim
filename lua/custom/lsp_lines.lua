@@ -4,7 +4,7 @@ pack_add({
 })
 
 require("lsp_lines").setup()
-vim.diagnostic.config({ virtual_lines = true })
+-- vim.diagnostic.config({ virtual_lines = true })
 
 nvim.key.map("n", "<leader>Tl", function()
 	require("lsp_lines").toggle()

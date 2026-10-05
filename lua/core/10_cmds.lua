@@ -24,3 +24,36 @@ vim.api.nvim_create_autocmd("VimLeavePre", {
 		end
 	end,
 })
+
+vim.api.nvim_create_autocmd("CursorHold", {
+	callback = function()
+		local line = vim.fn.line(".") - 1
+
+		local diagnostics = vim.diagnostic.get(0, {
+			lnum = line,
+		})
+
+		if #diagnostics == 0 then
+			return
+		end
+
+		vim.diagnostic.open_float(nil, {
+			focus = false,
+			scope = "line",
+			border = "rounded",
+			source = "always",
+		})
+	end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*.go",
+	callback = function()
+		vim.lsp.buf.code_action({
+			context = {
+				only = { "source.organizeImports" },
+			},
+			apply = true,
+		})
+	end,
+})
