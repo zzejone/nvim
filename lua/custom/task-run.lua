@@ -34,56 +34,11 @@ require("vstask").setup({
 })
 
 -- ============================================================
--- 获取当前 buffer 所在目录
+-- 获取 nvim 启动时的根目录
 -- ============================================================
 
-local function get_current_dir()
-	local file = vim.api.nvim_buf_get_name(0)
-
-	-- 当前 buffer 没有文件，例如 dashboard
-	if file == "" then
-		return vim.uv.cwd()
-	end
-
-	return vim.fs.dirname(file)
-end
-
--- ============================================================
--- 向上查找文件
---
--- 例如当前文件：
---
--- /home/user/project/src/main.go
---
--- 会依次检查：
---
--- /home/user/project/src/Taskfile.yml
--- /home/user/project/Taskfile.yml
--- /home/user/Taskfile.yml
--- /Taskfile.yml
--- ============================================================
-
-local function find_upward(filename)
-	local dir = get_current_dir()
-
-	while dir do
-		local path = vim.fs.joinpath(dir, filename)
-
-		if vim.uv.fs_stat(path) then
-			return path
-		end
-
-		local parent = vim.fs.dirname(dir)
-
-		-- 已经到文件系统根目录
-		if parent == dir then
-			break
-		end
-
-		dir = parent
-	end
-
-	return nil
+local function get_project_root()
+	return vim.uv.cwd()
 end
 
 -- ============================================================
@@ -91,7 +46,13 @@ end
 -- ============================================================
 
 local function find_taskfile()
-	return find_upward("Taskfile.yml")
+	local path = vim.fs.joinpath(get_project_root(), "Taskfile.yml")
+
+	if vim.uv.fs_stat(path) then
+		return path
+	end
+
+	return nil
 end
 
 -- ============================================================
@@ -99,7 +60,13 @@ end
 -- ============================================================
 
 local function find_vscode_tasks()
-	return find_upward(".vscode/tasks.json")
+	local path = vim.fs.joinpath(get_project_root(), ".vscode/tasks.json")
+
+	if vim.uv.fs_stat(path) then
+		return path
+	end
+
+	return nil
 end
 
 -- ============================================================
