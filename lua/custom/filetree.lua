@@ -10,4 +10,4 @@ require("yazi").setup({
 	open_for_directories = true,
 })
 
-nvim.key.map("n", "<leader>wn", "<cmd>Yazi cwd<cr>", { desc = "文件树" })
+nvim.key.map("n", "<leader>wn", "<cmd>Yazi toggle<cr>", { desc = "文件树" })
