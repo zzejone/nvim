@@ -6,7 +6,7 @@ require("pack").setup({
 	performance = {
 		vim_loader = true, -- Fallback to ensure vim.loader.enable() is called if omitted
 	},
-	use_git = false, -- Clone/update via backgrounded `git` so the UI never blocks; native vim.pack still syncs the lockfile afterwards
+	use_git = true, -- Clone/update via backgrounded `git` so the UI never blocks; native vim.pack still syncs the lockfile afterwards
 	ui = {
 		border = "rounded", -- Options: "single", "double", "rounded", "solid", "shadow"
 		auto_open = true, -- Automatically open dashboard float after the first plugin install completes

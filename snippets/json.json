@@ -1,0 +1,17 @@
+{
+  "bookmark": {
+    "body": [
+      "{",
+      "  \"name\": \"${1:name}\",",
+      "  \"slug\": \"${2:path}\",",
+      "  \"url\": \"${3:url}\",",
+      "  \"description\": \"${4:descriptiopn}\",",
+      "  \"category\": \"${5:category}\",",
+      "  \"rating\": 8.0,",
+      "  \"featured\": false,",
+      "  \"favicon\": \"\"",
+      "}"
+    ],
+    "prefix": "bookmark"
+  }
+}

@@ -57,10 +57,10 @@ end
 --
 -- 会依次检查：
 --
--- /home/user/project/src/Taskfile.yaml
--- /home/user/project/Taskfile.yaml
--- /home/user/Taskfile.yaml
--- /Taskfile.yaml
+-- /home/user/project/src/Taskfile.yml
+-- /home/user/project/Taskfile.yml
+-- /home/user/Taskfile.yml
+-- /Taskfile.yml
 -- ============================================================
 
 local function find_upward(filename)
@@ -87,11 +87,11 @@ local function find_upward(filename)
 end
 
 -- ============================================================
--- 查找 Taskfile.yaml
+-- 查找 Taskfile.yml
 -- ============================================================
 
 local function find_taskfile()
-	return find_upward("Taskfile.yaml")
+	return find_upward("Taskfile.yml")
 end
 
 -- ============================================================
@@ -108,7 +108,7 @@ end
 
 local function run_task()
 	-- ----------------------------------------------------------
-	-- Taskfile.yaml
+	-- Taskfile.yml
 	-- ----------------------------------------------------------
 
 	local taskfile = find_taskfile()
@@ -139,7 +139,7 @@ local function run_task()
 	-- ----------------------------------------------------------
 
 	vim.notify(
-		"No Taskfile.yaml or .vscode/tasks.json found\n"
+		"No Taskfile.yml or .vscode/tasks.json found\n"
 			.. "Current file: "
 			.. vim.api.nvim_buf_get_name(0)
 			.. "\nCurrent dir: "
