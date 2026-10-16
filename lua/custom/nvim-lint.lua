@@ -14,7 +14,7 @@ lint.linters_by_ft = {
 	typescript = eslint_found and { "eslint" } or {},
 	vue = eslint_found and { "eslint" } or {},
 	proto = { "protolint" },
-	go = { "golangcilint" },
+	-- go = { "golangcilint" },
 }
 
 -- 创建一个自动命令组

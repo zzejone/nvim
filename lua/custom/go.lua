@@ -102,7 +102,7 @@ require("go").setup({
 	-- to setup a table of codelens
 
 	golangci_lint = {
-		default = "standard", -- set to one of { 'standard', 'fast', 'all', 'none' }
+		default = "fast", -- set to one of { 'standard', 'fast', 'all', 'none' }
 		disable = {}, -- linters to disable empty by default
 		enable = { "govet", "ineffassign", "revive" }, -- linters to enable; empty by default
 		config = nil, -- set to a config file path

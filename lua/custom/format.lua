@@ -9,7 +9,7 @@ require("conform").setup({
 		lsp_format = "fallback",
 	},
 	formatters_by_ft = {
-		go = { "goimports-reviser", "gofumpt" },
+		go = { "gofmt", "goimports", "goimports-reviser", "gofumpt" },
 		log = { "jq_log_formatter" },
 		lua = { "stylua" },
 		html = { "prettier" },
