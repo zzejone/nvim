@@ -1,4 +1,5 @@
 pack_add({
+	"folke/trouble.nvim",
 	"folke/todo-comments.nvim",
 })
 
@@ -12,7 +13,7 @@ require("todo-comments").setup({
 			alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
 			-- signs = false, -- configure signs for some keywords individually
 		},
-		TODO = { icon = " ", color = "info" },
+		TODO = { icon = " ", color = "info", alt = { "todo" } },
 		HACK = { icon = " ", color = "warning" },
 		WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
 		PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
@@ -76,4 +77,4 @@ require("todo-comments").setup({
 
 nvim.key.group("<leader>t", "todo")
 
-nvim.key.map("n", "<leader>td", "<cmd>TodoQuickFix<cr>", { desc = "显示todo列表" })
+nvim.key.map("n", "<leader>td", "<cmd>Trouble todo<cr>", { desc = "显示todo列表" })
